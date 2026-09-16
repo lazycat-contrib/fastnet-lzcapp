@@ -1,0 +1,14 @@
+package: cloud.lazycat.app.fastnet
+version: 0.1.0
+name: FastNet
+description: "全平台的测速软件"
+min_os_version: "1.5.0"
+homepage: https://fw.koolcenter.com/binary/fastnet/
+author: xkand
+locales:
+  zh:
+    description: "全平台的测速软件"
+    name: FastNet
+  en:
+    description: "Cross-platform network speed test software"
+    name: FastNet

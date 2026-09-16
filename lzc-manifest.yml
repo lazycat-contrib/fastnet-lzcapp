@@ -1,28 +1,17 @@
-name: FastNet
-package: cloud.lazycat.app.fastnet
-version: 0.1.0
-min_os_version: 1.3.8
-description: "全平台的测速软件"
-homepage: https://fw.koolcenter.com/binary/fastnet/
-author: xkand
-
 application:
   subdomain: fastnet
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://host.lzcapp:7171/
-
 services:
   fastnet:
-    # xkand/fastnet
-    image: registry.lazycat.cloud/czyt/xkand/fastnet:562480121f99a3d5
+    # upstream: xkand/fastnet:latest
+    image: docker.1ms.run/xkand/fastnet:latest@sha256:7063a7daf48eb95f581d87a089cacdb153fec0811b92c0fe690b2159dfad7ba1
     environment:
       - PORT=7171
     network_mode: host
-    restart: always
     healthcheck:
       test:
         - CMD-SHELL
@@ -31,11 +20,3 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
-
-locales:
-  zh:
-    name: "FastNet"
-    description: "全平台的测速软件"
-  en:
-    name: "FastNet"
-    description: "network speed test software"
